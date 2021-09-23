@@ -21,6 +21,4 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Run main.py
       run: |
-        python main.py
-      env:
-        MY_GITHUB_TOKEN: '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'
+
