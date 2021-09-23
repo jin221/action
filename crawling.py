@@ -12,11 +12,6 @@ def parsing_beautifulsoup(url):
 
 
 def extract_book_data(soup):
-    """
-    BeautifulSoup Object에서 book data를 추출하는 함수
-    :param soup: BeautifulSoup soup Object
-    :return: contents(str)
-    """
 
     upload_contents = ''
     new_books = soup.select(".goodsTxtInfo")
