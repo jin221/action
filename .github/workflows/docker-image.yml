@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
     - name: Build the Docker image
+      uses: actions/checkout@v2
+    
+    - name: Set up container
+      uses: docker://aflplusplus/aflplusplus
+    
+    - name: Set up Docker build
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
