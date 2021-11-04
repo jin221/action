@@ -66,6 +66,10 @@ RUN git clone --depth=1 https://github.com/AFLplusplus/AFLplusplus.git
 RUN cd /AFLplusplus
 WORKDIR /AFLplusplus
 
+COPY entrypoint.sh AFLplusplus/entrypoint.sh
+
+ENTRYPOINT ["/bin/bash", "AFLplusplus/entrypoint.sh"]
+
 #COPY . /AFLplusplus
 #WORKDIR /AFLplusplus
 #RUN export CC=gcc-10 && export CXX=g++-10 && make clean && \
@@ -85,9 +89,7 @@ RUN echo "export PS1='"'[afl++ \h] \w$(__git_ps1) \$ '"'" >> ~/.bashrc
 ENV IS_DOCKER="1"
 
 
-#COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["echo", "hello"]
 
 # Disabled until we have the container ready
 #COPY --from=aflplusplus/afl-dyninst /usr/local/lib/libdyninstAPI_RT.so /usr/local/lib/libdyninstAPI_RT.so
