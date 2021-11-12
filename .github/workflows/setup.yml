@@ -1,0 +1,6 @@
+name: setup
+
+steps:
+  - name: Setup Container
+    runs:
+      using: docker
