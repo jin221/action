@@ -13,10 +13,10 @@ jobs:
 
     steps:
     - name: Build the Docker image
-      uses: actions/checkout@v2
+      uses: actions/checkout@v1
     
-    - name: Set up container
-      uses: docker://aflplusplus/aflplusplus
+    - name: Setup
+      uses: ./.github/worflows/
           
     
  #   - name: Set up Docker build
