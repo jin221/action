@@ -15,8 +15,8 @@ jobs:
     - name: Build the Docker image
       uses: actions/checkout@v1
     
-    - name: Setup
-      uses: ./.github/worflows/
+    - name: setup
+      uses: ./.github/workflows/
           
     
  #   - name: Set up Docker build
