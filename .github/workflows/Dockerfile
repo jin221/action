@@ -85,10 +85,10 @@ RUN echo "export PS1='"'[afl++ \h] \w$(__git_ps1) \$ '"'" >> ~/.bashrc
 ENV IS_DOCKER="1"
 
 
+COPY entrypoint.py /entrypoint.py
 
-#CMD ["echo", "hello"]
-COPY entrypoint.sh AFLplusplus/entrypoint.sh
-ENTRYPOINT ["/bin/bash", "AFLplusplus/entrypoint.sh"]
+CMD ["/entrypoint.py"]
+ENTRYPOINT ["python"]
 
 # Disabled until we have the container ready
 #COPY --from=aflplusplus/afl-dyninst /usr/local/lib/libdyninstAPI_RT.so /usr/local/lib/libdyninstAPI_RT.so
